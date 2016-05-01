@@ -131,7 +131,10 @@ module coneRim(height,innerRadius,thickness){
     tolerance=2;
     difference(){
         cylinder(height,outerRadius,outerRadius);
-        translate([0,0,0]) cylinder(height,outerRadius,innerRadius);
+        union(){
+			cylinder(height,outerRadius,innerRadius);
+			translate([0,0,-tolerance/2]) cylinder(height+tolerance,innerRadius,innerRadius); //this just helps to create a nice preview
+		}
     }
 }
 
