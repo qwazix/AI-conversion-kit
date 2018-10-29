@@ -1,8 +1,8 @@
 //lens specific parameters
-innerDiameter=57.62;//59.1; //on my 3D printer I had to increase that to 59.1 in order to fit 
+innerDiameter=58.32;//59.1; //on my 3D printer I had to increase that to 59.1 in order to fit 
 thickness=1.33; //ring thickness
 originalHeight=12.03; //original non AI ring height
-rimHeight=2; //the height that you would actually need to file if you did the conversion by modifying the original aperture ring
+rimHeight=2.6; //the height that you would actually need to file if you did the conversion by modifying the original aperture ring
 apertureClicks=5; //how many aperture clicks does this lens have
 AIridgePosition=4.66; //see http://www.chr-breitkopf.de/photo/aiconv.en.html#ai_pos
 maxApertureInStopsOver5point6=1.2; //e.g. f/4 is 1 stop faster than 5.6 f/2.8 is 2 etc.
@@ -12,7 +12,7 @@ fatInnerRingThickness=0.53;
 fatInnerRingHeight=3;
 fatInnerRingZ=1.25;
 thinInnerRingThickness=0.9;
-thinInnerRingHeight=2;
+thinInnerRingHeight=1.7;
 thinInnerRingZ=8;
 //thinInnerRingDistanceFromRimTop=1.44;
 //44.29
@@ -91,7 +91,7 @@ difference(){
 }
 
 module screw_hole(){
-    rotate([0,0,25]) translate([-innerRadius-thickness-tolerance*2,0,2.6]) rotate([90,0,90]) cylinder(7,1,1);
+    rotate([0,0,25]) translate([-innerRadius-thickness-tolerance*2,0,2.6]) rotate([90,0,90]) cylinder(7, r=0.7, $fn=16);
 }
 
 //Radial_Array(a,n,r){child object}
