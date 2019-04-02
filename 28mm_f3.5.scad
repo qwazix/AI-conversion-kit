@@ -31,11 +31,18 @@ $fa = 3; //circle resolution
 $fs = 1; //circle resolution 2
 tolerance=2; //this is used so that the F5 openscad preview looks better
 
+print_rabbit_ears=true;
+
 
 //intermediate values
 outerDiameter=innerDiameter+thickness;
 innerRadius=innerDiameter/2;
 outerRadius=outerDiameter/2;
+
+//rabbit ears
+use <rabbit-ears.scad>
+rotate(-15) translate([innerRadius+thickness,0,originalHeight-rimHeight]) rotate([90,0,90]) rabbit_ears(slope=8);
+
 
 //rim
 difference(){
